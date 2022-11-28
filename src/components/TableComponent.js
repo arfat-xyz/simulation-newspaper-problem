@@ -166,36 +166,109 @@ const TableComponent = ({ length }) => {
   };
   calculate(length);
   return (
-    <table>
-      <thead>
-        <tr>
-          <th>Day</th>
-          <th>RD Newspaper</th>
-          <th>Newsdays</th>
-          <th>RD Demand</th>
-          <th>Demand</th>
-          <th>Revenue</th>
-          <th>Loss</th>
-          <th>Scrap</th>
-          <th>Profit</th>
-        </tr>
-      </thead>
-      <tbody>
-        {finalArray.map((f, i) => (
-          <tr key={i}>
-            <td>{i + 1}</td>
-            <td>{f.rNForNewspaper}</td>
-            <td>{f.typesOfNewsdays}</td>
-            <td>{f.rNDemand}</td>
-            <td>{f.demand}</td>
-            <td>{f.revenue}</td>
-            <td>{f.lossProfit}</td>
-            <td>{f.salvageSale}</td>
-            <td>{f.profit.toFixed(2)}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
+    <>
+      <div class="flex flex-col">
+        <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
+          <div class="py-4 inline-block min-w-full sm:px-6 lg:px-8">
+            <div class="overflow-hidden">
+              <table className="min-w-full text-center">
+                <thead className="border-b bg-gray-800 text-white">
+                  <tr>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Day
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      RD Newspaper
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Newsdays
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      RD Demand
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Demand
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Revenue
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Loss
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Scrap
+                    </th>
+                    <th
+                      scope="col"
+                      className="text-sm font-medium text-white px-6 py-4"
+                    >
+                      Profit
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {finalArray.map((f, i) => (
+                    <tr key={i} className="bg-white border-b">
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {i + 1}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.rNForNewspaper}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.typesOfNewsdays}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.rNDemand}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.demand}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.revenue}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.lossProfit}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.salvageSale}
+                      </td>
+                      <td className="text-sm text-black-500 font-normal px-6 py-4 whitespace-nowrap">
+                        {f.profit.toFixed(2)}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };
 
